@@ -5,7 +5,7 @@ QtWidgetStyler is a small Python class intended to make the dynamic styling of Q
 
 Initialise WidgetStyler.
 
-    from qt_widgetstyler import WidgetStyler()
+    from qt_widgetstyler import WidgetStyler
     sw = WidgetStyler()
 
 Create a new widget category. A category is a logical separation between different sections of your program's widgets, and allows you to easily apply new or updated stylesheets to one or more categories.
