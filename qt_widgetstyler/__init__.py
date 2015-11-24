@@ -31,7 +31,7 @@ class WidgetStyler:
  
         return return_dict
  
-    def show_style_categories(self):
+    def show_categories(self):
         # Method will return all categories - keys of the self.categories dictionary.
         return list(self.categories.keys())
  
