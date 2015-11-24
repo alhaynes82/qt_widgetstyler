@@ -3,25 +3,30 @@ QtWidgetStyler is a small Python class intended to make the dynamic styling of Q
 
 ### Usage
 
-Initialise WidgetStyler.
+Inherit WidgetStyler class:
 
     from qt_widgetstyler import WidgetStyler
     sw = WidgetStyler()
 
-Create a new widget category. A category is a logical separation between different sections of your program's widgets, and allows you to easily apply new or updated stylesheets to one or more categories.
+Create a new category. A category is a logical separation between different sections of your program's widgets, and allows you to easily apply new or updated stylesheets to one or more categories simultaneously.
 
     sw.new_style_category('top_navigation')
 
-A custom widget is created below the category. This custom widget falls under the category we've defined, and all individual widgets assigned to this custom widget will share the same stylesheet.
+A custom widget group is created below the category. The custom widget group is a collection of individual widgets, generally of the same type (QLabel, QTableView, etc.), and all individual widget objects assigned to this custom widget group will share the same stylesheet.
 
     sw.add_custom_widget(category='top_navigation', widget_name='top_navigation_qlabel_text')
 
-For this category of our program, we have three QLabel widget objects which we wish to assign to this custom_widget, QLabel1, QLabel2, and QLabel3. We can add them individually or together in a list.
+For this category of our program, we have three QLabel widget objects which we wish to assign to our custom widget group, QLabel1, QLabel2, and QLabel3. We can add them individually, or together in a list.
+
+Individually:
 
     sw.add_widget(widget_instance=QLabel1, category='top_navigation', widget_name='top_navigation_qlabel_text')
+
+Together:    
+    
     sw.add_widgets(widget_instances_list=[QLabel2, QLabel3], category='top_navigation', widget_name='top_navigation_qlabel_text')
 
-We now add a StyleSheet to this custom widget, which will be shared by all the widget objects assigned to it.
+We now add a StyleSheet to this custom widget group, which will be shared by all the widget objects assigned to it. This only stores the StyleSheet, it does not yet apply it:
 
     sw.add_stylesheet(category='top_navigation', widget_name='top_navigation_qlabel_text', stylesheet='QLabel { color: rgb(0, 0, 0); }')
 
@@ -43,6 +48,6 @@ To view all of your defined categories:
 
     sw.show_style_categories()
 
-To view all of your defined widgets within one category:
+To view all of your defined widgets within a single category:
 
     sw.show_category_widgets(category='top_navigation')
