@@ -1,5 +1,5 @@
 # qt_widgetstyler
-QtWidgetStyler is a small Python class intended to make the dynamic styling of Qt widgets via either PySide or PyQt a simpler task.
+qt_widgetstyler is a small Python class intended to make the dynamic styling of Qt widgets via either PySide or PyQt a simpler task.
 
 ### Usage
 
@@ -46,7 +46,7 @@ Or to all of our widgets in all of our categories:
 
 To view all of your defined categories:
 
-    ws.show_style_categories()
+    ws.show_categories()
 
 To view all of your defined widgets within a single category:
 
