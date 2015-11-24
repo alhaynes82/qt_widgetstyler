@@ -1,7 +1,6 @@
 class WidgetStyler:
  
-    def __init__(self, app):
-        self.app = app
+    def __init__(self):
         self.categories = {}
  
     def _check_category_exists(self, category):
